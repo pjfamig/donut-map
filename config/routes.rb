@@ -1,4 +1,6 @@
 Donutmap::Application.routes.draw do
-  root 'static_pages#home'
+  resources :locations
+
+  root 'locations#index'
   match '/about',   to: 'static_pages#about',   via: 'get'
 end
