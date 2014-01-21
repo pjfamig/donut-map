@@ -12,7 +12,6 @@ class LocationsController < ApplicationController
       marker.title location.name
       marker.json({
         id: location.id,
-        contry: "random",
         name: location.name
       })
       marker.picture({
