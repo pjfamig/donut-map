@@ -5,20 +5,6 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
-    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
-      marker.lat location.latitude
-      marker.lng location.longitude
-      marker.infowindow location.name
-      marker.title location.name
-      marker.json({
-        id: location.id,
-        name: location.name
-      })
-      marker.picture({
-             "url" => "/images/donut_test.png",
-             "width" =>  30,
-             "height" => 30})
-    end
   end
 
   # GET /locations/1

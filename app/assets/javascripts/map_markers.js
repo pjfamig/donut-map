@@ -1,17 +1,40 @@
 var infos = []
 
 var donuts = [
-  ['King Pin Donuts', 37.867962,-122.257937, 4, 'King Pin Donuts'],
-  ['Fluffy Donuts & Sandwich Shop', 38.547016,-121.760390, 3, 'Fluffy Donuts & Sandwich Shop'],
-  ['Golden Donut', 37.78036,-122.477255, 2, 'Golden Donut'],
-  ['Allstar Donuts', 37.782603,-122.468864, 5, 'Allstar Donuts'],
-  ['Donut King', 34.01986,-118.403967, 6, 'Donut King'],
+  ['King Pin Donuts', 37.867962,-122.257937],
+  ['Fluffy Donuts & Sandwich Shop', 38.547016,-121.760390],
+  ['Golden Donut', 37.78036,-122.477255],
+  ['Allstar Donuts', 37.782603,-122.468864],
+  ['Donut King', 34.01986,-118.403967],
   ['Donut King', 34.009511,-118.414014],
   ['Donut King', 33.929935,-118.245933],
   ['Donut King 2', 33.894821,-118.308743],
   ['Stans Corner Donuts', 34.062509,-118.447021],
-  ['Randy\'s Donuts', 33.961851,-118.370452]
+  ['Randy\'s Donuts', 33.961851,-118.370452],
+  ['Krispy Kreme Doughnuts', 34.026065,-118.490070],
+  ['Bob\'s Coffee & Donuts',34.072166, -118.360299],
+  ['Primo\'s Donuts',34.026903, -118.431640],
+  ['Donut Star', 33.671466, -117.789051],
+  ['Doughnut Plant',40.716298, -73.988494],
+  ['Doughnut Plant',40.744556, -73.996785],
+  ['The Donut Man',34.128964, -117.849743],
+  ['Doughnut Hut',34.173504, -118.330145],
+  ['Doughnut Dolly',37.83591, -122.262099],
+  ['Sidecar Doughnuts & Coffee',33.633795, -117.916373],
+  ['Donut Bar', 32.7177, -117.158769],
+  ['Pink Box Doughnuts',36.195616, -115.258276],
+  ['Hypnotic Donuts',32.826895, -96.710530],
+  ['Revolution Doughnuts & Coffee', 33.765465, -84.308383],
+  ['Glazed Gourmet Doughnuts',32.789448, -79.939048],
+  ['Monuts Donuts',35.995238, -78.899890],
+  ['Astro Doughnuts & Fried Chicken',38.898303, -77.030357],
+  ['Federal Donuts',39.950593, -75.168097],
+  ['Union Square Donuts', 42.380678, -71.097372],
+  ['The Holy Donut', 43.655967, -70.274849],
+  ['Blue Star Donuts',45.522087, -122.684147],
+  ['Top Pot Doughnuts', 47.543425, -122.058318]
 ];
+
 
 function setMarkers(map, locations) {
 	var image = { 

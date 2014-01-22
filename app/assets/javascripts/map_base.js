@@ -12,7 +12,7 @@ function initialize() {
       
 	  var mapOptions = {
 	    zoom: 14,
-		panControl: false
+		disableDefaultUI: true
 	  };
 
 	  map = new google.maps.Map(document.getElementById('map_canvas'),
