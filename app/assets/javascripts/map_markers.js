@@ -8,7 +8,7 @@ function initialize() {
     navigator.geolocation.getCurrentPosition(function(position) {
       
 	  var mapOptions = {
-	    zoom: 14,
+	    zoom: 12,
 		disableDefaultUI: true
 	  };
 
@@ -112,15 +112,16 @@ function setMarkers(map, locations) {
 	        title: donut[0],
 	        zIndex: donut[3]
 	    });
-	
-		map.setCenter(marker.getPosition())
-		
+					
 		var content = donut[0]
 		
 		var infowindow = new google.maps.InfoWindow()
 		
 		google.maps.event.addListener(marker,'click', (function(marker,content,infowindow) { 
 			return function() {
+
+				var latLng = marker.getPosition(); // returns LatLng object
+				map.panTo(latLng); // setCenter takes a LatLng object
 				
 				closeInfos();
 				
