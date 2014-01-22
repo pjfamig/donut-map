@@ -41,7 +41,8 @@ function handleNoGeolocation(errorFlag) {
   
   var mapOptions = {
     zoom: 4,
-	panControl: false
+	panControl: false,
+	disableDefaultUI: true
   };
   map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
@@ -96,10 +97,10 @@ var donuts = [
 
 function setMarkers(map, locations) {
 	var image = { 
-		url: 'images/donut_test.png',
-		size: new google.maps.Size(30, 30),
+		url: 'images/donut_test_medium.png',
+		size: new google.maps.Size(48, 48),
 		origin: new google.maps.Point(0,0),
-		anchor: new google.maps.Point(0, 30)
+		anchor: new google.maps.Point(0, 48)
 	};
 
 	for (var i = 0; i < locations.length; i++) {
