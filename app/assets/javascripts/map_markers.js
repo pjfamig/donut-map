@@ -2,6 +2,7 @@ var infos = []
 var map;
 //var x=document.getElementById("demo");
 
+
 function initialize() {
   // Start HTML5 geolocation
   if(navigator.geolocation) {
@@ -97,10 +98,10 @@ var donuts = [
 
 function setMarkers(map, locations) {
 	var image = { 
-		url: 'images/donut_test_medium.png',
-		size: new google.maps.Size(48, 48),
+		url: 'images/esther_donut_test_medium_2.png',
+		size: new google.maps.Size(50, 85),
 		origin: new google.maps.Point(0,0),
-		anchor: new google.maps.Point(0, 48)
+		anchor: new google.maps.Point(0, 85)
 	};
 
 	for (var i = 0; i < locations.length; i++) {
