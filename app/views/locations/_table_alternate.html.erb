@@ -1,0 +1,26 @@
+<center>
+<br><br><br><br><br><br><br>
+
+<%= content_tag "div", id: "locations", data: {locations: Location.all} do %>
+
+<script>
+
+var testOne = $('#locations').data('locations');
+console.log(testOne);
+
+$('#locations').append('<table ><thead><tr><th style="width: 150px;">Name</th><th style="width: 150px;">Address</th><th style="width: 120px;">City</th><th style="width: 50px;">State</th><th style="width: 100px;">Latitude</th><th style="width: 100px;">Longitude</th><th style="width: 160px;">Description</th></tr></thead><tbody>');
+
+for (var i = 0; i < testOne.length; i++) {
+    var testResult = testOne[i];
+
+	$('#locations').append('<tr><td width="150px" align="left">' + testResult.name + '</td><td width="150px" align="left">' + testResult.address + '</td><td width="120px" align="left">' + testResult.city + '</td><td width="50px" align="center">' + testResult.state + '</td><td width="100px" align="left">' + testResult.latitude + '</td><td width="100px" align="left">' + testResult.longitude + '</td><td width="160px" align="left">' + testResult.description + '</td></tr>');
+}
+
+$('#locations').append('</tbody></table>');
+
+</script>
+
+<% end %>
+
+<%= link_to 'Add a location', new_location_path %>
+</center>

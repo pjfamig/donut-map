@@ -1,6 +1,13 @@
 <div id="map_canvas" style='height: 100%'></div>
-<script> 
+
+<%= content_tag "div", id: "locations", data: {locations: Location.all} do %>
+<% end %>
+
+<script>
+var allLocations = $('#locations').data('locations');
+console.log(allLocations);
 google.maps.event.addDomListener(window, 'load', initialize); 
 </script>
+
 
 

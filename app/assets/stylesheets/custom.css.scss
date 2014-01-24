@@ -99,6 +99,23 @@ p {
   }
 }
 
+
+/* sidebar */
+
+.sidebar-nav-fixed {
+    padding: 9px;
+    position:fixed;
+    left:60px;
+    top:40px;
+    width:200px;
+	max-height: 400px;
+	background: #FFF;
+	overflow: hidden;
+}
+
+
+
+
 /* footer */
 
 footer {

@@ -2,7 +2,6 @@ var infos = []
 var map;
 //var x=document.getElementById("demo");
 
-
 function initialize() {
   // Start HTML5 geolocation
   if(navigator.geolocation) {
@@ -21,7 +20,7 @@ function initialize() {
 
 	  var marker = new google.maps.Marker({position:pos, map:map, title:"You are here"});
 	 	  		
-	  setMarkers(map, donuts);
+	  setMarkers(map, allLocations, pos);
       map.setCenter(pos);
 
     }, function() {
@@ -32,6 +31,7 @@ function initialize() {
     handleNoGeolocation(false);
   }
 }
+
 
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
@@ -48,6 +48,8 @@ function handleNoGeolocation(errorFlag) {
   map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
 
+  var pos = "40.111689,-99.228516";
+  
   var options = {
     map: map,
     position: new google.maps.LatLng(40.111689,-99.228516),
@@ -55,8 +57,61 @@ function handleNoGeolocation(errorFlag) {
   };
 
   map.setCenter(options.position);
-  setMarkers(map, donuts);
+  setMarkers(map, allLocations, pos);
+}
+
+
+function setMarkers(map, allLocations, pos) {
+	var image = { 
+		url: 'images/donut_test_medium.png',
+		size: new google.maps.Size(48, 48),
+		origin: new google.maps.Point(0,0),
+		anchor: new google.maps.Point(0, 48)
+	};
+
+
+	for (var i = 0; i < allLocations.length; i++) {
+	    var testResult = allLocations[i];
+	    var myLatLng = new google.maps.LatLng(testResult.latitude, testResult.longitude);
+		
+		var marker = new google.maps.Marker({
+	        position: myLatLng,
+	        map: map,
+	        icon: image,
+			title: testResult.name
+	    });
+	
+		var infowindow = new google.maps.InfoWindow();
+		distance = google.maps.geometry.spherical.computeDistanceBetween(pos, myLatLng);
+		distance = (distance/1609.344).toFixed(0);
+		var content = testResult.name + "<br>" + distance + " miles away!";
+		
+		google.maps.event.addListener(marker,'click', (function(marker,content,infowindow) {
+			return function() {
+				var latLng = marker.getPosition(); //returns LatLng object
+				map.panTo(latLng); 
+				closeInfos();
+				infowindow.setContent(content);
+				infowindow.open(map,marker);
+				infos[0] = infowindow;
+			};
+		})(marker,content,infowindow));
+	}
+}
+
+function closeInfos(){
  
+   if(infos.length > 0){
+ 
+      /* detach the info-window from the marker ... undocumented in the API docs */
+      infos[0].set("marker", null);
+ 
+      /* and close it */
+      infos[0].close();
+ 
+      /* blank the array */
+      infos.length = 0;
+   }
 }
 
 
@@ -94,60 +149,3 @@ var donuts = [
   ['Blue Star Donuts',45.522087, -122.684147],
   ['Top Pot Doughnuts', 47.543425, -122.058318]
 ];
-
-
-function setMarkers(map, locations) {
-	var image = { 
-		url: 'images/esther_donut_test_medium_2.png',
-		size: new google.maps.Size(50, 85),
-		origin: new google.maps.Point(0,0),
-		anchor: new google.maps.Point(0, 85)
-	};
-
-	for (var i = 0; i < locations.length; i++) {
-	    var donut = locations[i];
-	    var myLatLng = new google.maps.LatLng(donut[1], donut[2]);
-	    var marker = new google.maps.Marker({
-	        position: myLatLng,
-	        map: map,
-	        icon: image,
-	        title: donut[0],
-	        zIndex: donut[3]
-	    });
-					
-		var content = donut[0]
-		
-		var infowindow = new google.maps.InfoWindow()
-		
-		google.maps.event.addListener(marker,'click', (function(marker,content,infowindow) { 
-			return function() {
-
-				var latLng = marker.getPosition(); // returns LatLng object
-				map.panTo(latLng); // setCenter takes a LatLng object
-				
-				closeInfos();
-				
-				infowindow.setContent(content);
-				infowindow.open(map,marker);
-				
-				infos[0] = infowindow;
-				
-			};
-		})(marker,content,infowindow));
-	}
-}
-
-function closeInfos(){
- 
-   if(infos.length > 0){
- 
-      /* detach the info-window from the marker ... undocumented in the API docs */
-      infos[0].set("marker", null);
- 
-      /* and close it */
-      infos[0].close();
- 
-      /* blank the array */
-      infos.length = 0;
-   }
-}
