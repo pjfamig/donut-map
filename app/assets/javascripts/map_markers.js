@@ -69,11 +69,13 @@ function setMarkers(map, allLocations, pos) {
 		anchor: new google.maps.Point(0, 48)
 	};
 
+	//create an array to store name-and-distance objects for sidebar
+	var distances = [];
 
+	//loop through database and set up markers and metadata
 	for (var i = 0; i < allLocations.length; i++) {
 	    var testResult = allLocations[i];
-	    var myLatLng = new google.maps.LatLng(testResult.latitude, testResult.longitude);
-		
+	    var myLatLng = new google.maps.LatLng(testResult.latitude, testResult.longitude);	
 		var marker = new google.maps.Marker({
 	        position: myLatLng,
 	        map: map,
@@ -82,8 +84,17 @@ function setMarkers(map, allLocations, pos) {
 	    });
 	
 		var infowindow = new google.maps.InfoWindow();
+		
+		//compute distance of each shop from origin
 		distance = google.maps.geometry.spherical.computeDistanceBetween(pos, myLatLng);
-		distance = (distance/1609.344).toFixed(0);
+		distance = (distance/1609.344).toFixed(1);
+		
+		//add distance objects to array
+		distances[i] = new Object();
+		distances[i].name = testResult.name;
+		distances[i].distance = distance;
+		
+		
 		var content = testResult.name + "<br>" + distance + " miles away!";
 		
 		google.maps.event.addListener(marker,'click', (function(marker,content,infowindow) {
@@ -97,7 +108,20 @@ function setMarkers(map, allLocations, pos) {
 			};
 		})(marker,content,infowindow));
 	}
+	
+	//pass array of distance objects
+	findNearest(distances);
 }
+
+
+function findNearest(distances) {
+	distances.sort(function(a, b) { 
+	  return a.distance - b.distance  ||  a.name.localeCompare(b.name);
+	});
+	console.log(distances);
+}
+
+
 
 function closeInfos(){
  

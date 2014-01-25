@@ -3,6 +3,14 @@
     <div class="container">
 	
       <%= link_to "Donut Map", root_path, id: "logo" %>
+
+	<form class="form-search">
+		<div class="input-append">
+	  		<input class="input-large search-query" id="appendedInputButton" type="text">
+	  		<button class="btn" type="submit">Go!</button>
+		</div>
+	</form>
+
       <nav>
         <ul class="nav pull-right">
 		  <li><%= link_to 'See All', locations_path %></li>

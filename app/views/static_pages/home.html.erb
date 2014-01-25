@@ -1,11 +1,18 @@
+
+
 <div id="map_canvas" style='height: 100%'></div>
 
 <%= content_tag "div", id: "locations", data: {locations: Location.all} do %>
 <% end %>
 
 <script>
+//receive locations variable from rails query
+//allLocations variable available to JS script
 var allLocations = $('#locations').data('locations');
-console.log(allLocations);
+
+//console.log(allLocations);
+
+//load gmaps on pageload
 google.maps.event.addDomListener(window, 'load', initialize); 
 </script>
 
