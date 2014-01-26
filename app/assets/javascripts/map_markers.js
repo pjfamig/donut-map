@@ -95,7 +95,7 @@ function setMarkers(map, allLocations, pos) {
 		distances[i].distance = distance;
 		
 		
-		var content = testResult.name + "<br>" + distance + " miles away!";
+		var content = "<strong>" + testResult.name + "</strong>" + "<br>" + testResult.address + "<br>" + testResult.city + ", " + testResult.state + "<br><br>" + distance + " miles away!";
 		
 		google.maps.event.addListener(marker,'click', (function(marker,content,infowindow) {
 			return function() {
