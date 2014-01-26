@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120203932) do
+ActiveRecord::Schema.define(version: 20140126024132) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20140120203932) do
     t.float    "longitude"
     t.text     "description"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "search_suggestions", force: true do |t|
+    t.string   "term"
+    t.integer  "popularity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

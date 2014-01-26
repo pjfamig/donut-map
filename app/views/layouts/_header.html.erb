@@ -4,12 +4,9 @@
 	
       <%= link_to "Donut Map", root_path, id: "logo" %>
 
-	<form class="form-search">
-		<div class="input-append">
-	  		<input class="input-large search-query" id="appendedInputButton" type="text">
-	  		<button class="btn" type="submit">Go!</button>
-		</div>
-	</form>
+	<%=	render 'locations/search' %>
+	
+	
 
       <nav>
         <ul class="nav pull-right">

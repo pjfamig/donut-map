@@ -1,4 +1,6 @@
 Donutmap::Application.routes.draw do
+  resources :search_suggestions
+
   resources :locations
 
   root 'static_pages#home'
