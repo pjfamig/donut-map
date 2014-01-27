@@ -30,6 +30,20 @@ function initialize() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
+
+
+   // Make map responsive
+	var resizeTimeout; 
+	google.maps.event.addDomListener(window, "resize", function() { 
+		var center = map.getCenter();
+		google.maps.event.trigger(map, "resize");
+		map.setCenter(center); 		
+		if (resizeTimeout) { 
+			clearTimeout(resizeTimeout); 
+		} 
+	resizeTimeout = setTimeout(function() { /* do resizing */ }, 250); 
+	});
+	
 }
 
 

@@ -1,4 +1,27 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+
+
+
+body { 
+	padding: 0px; 
+}
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+
+
+.navbar.navbar-fixed-top .navbar-inner{
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+	position: fixed;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
 
 
 /* mixins, variables, etc. */
@@ -14,14 +37,18 @@ $grayMediumLight: #eaeaea;
 
 .form-search {
 	margin-top: 12px;
-	margin-left: 80px;
 	float: left;
 }
 
 
-#map img { 
+img { 
 	max-width: none; 
 }
+
+#locations {
+	display: none;
+}
+
 
 #map label { 
   width: auto; display:inline; 
@@ -31,6 +58,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 }
+
 
 html {
   overflow-y: scroll;
@@ -50,12 +78,6 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
-}
-
-
-.navbar.navbar-fixed-top .navbar-inner{
-    background: rgba(255, 255, 255, 0.9);
-	height: 55px;
 }
 
 
@@ -105,21 +127,6 @@ p {
     text-decoration: none;
   }
 }
-
-
-/* sidebar */
-
-.sidebar-nav-fixed {
-    padding: 9px;
-    position:fixed;
-    left:60px;
-    top:40px;
-    width:200px;
-	max-height: 400px;
-	background: #FFF;
-	overflow: hidden;
-}
-
 
 
 

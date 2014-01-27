@@ -17,6 +17,7 @@
 //= require_tree .
 //= require map_base
 //= require map_markers
+//= require bootstrap
 
 
 
