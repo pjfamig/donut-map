@@ -4,7 +4,11 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.search(params[:search])
+    if (params[:search])
+      @locations = Location.search(params[:search])
+    else
+      @locations = Location.all
+    end
   end
 
   # GET /locations/1

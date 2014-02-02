@@ -152,6 +152,40 @@ function closeInfos(){
    }
 }
 
+var donuts2 = [
+	"King Pin Donuts, 2521 Durant Ave, Berkeley, CA",
+	"Fluffy Donuts, 757 Russell Blvd, Davis, CA",
+	"Golden Donut, 5401 Geary Blvd, San Francisco, CA",
+	"Allstar Donuts, 901 Clement St, San Francisco, CA",
+	"Donut King, 10400 Venice Blvd, Culver City, CA",
+	"Donut King, 3970 Sepulveda Blvd, Culver City, CA",
+	"Donut King, 1601 E Imperial Hwy, Los Angeles, CA",
+	"Donut King 2, 15032 S Western Ave, Gardena, CA",
+	"Stan's Corner Donut Shoppe, 10948 Weyburn Ave, Los Angeles, CA",
+	"Randy's Donuts, 805 West Manchester Blvd, Inglewood, CA",
+	"Krispy Kreme Doughnuts, 1231 Wilshire Blvd, Santa Monica, CA",
+	"Bob's Coffee & Donuts, 6333 West 3rd Street #450, Los Angeles, CA",
+	"Primo's Donuts, 2918 Sawtelle Blvd, Los Angeles, CA",
+	"Donut Star, 5365 Alton Pkwy, Irvine, CA",
+	"Doughnut Plant, 379 Grand St, New York, NY",
+	"Doughnut Plant, 220 W 23rd St, New York, NY",
+	"The Donut Man, 915 E Rte 66, Glendora, CA",
+	"Doughnut Hut, 2025 W Magnolia Blvd, Burbank, CA",
+	"Doughnut Dolly, 482 B 49th St, Oakland, CA",
+	"Sidecar Doughnuts & Coffee, 270 E 17th St, Costa Mesa, CA",
+	"Donut Bar, 631 B St, San Diego, CA",
+	"Pink Box Doughnuts, 7531 W Lake Mead Blvd, Las Vegas, NV",
+	"Hypnotic Donuts, 9007 Garland Rd, Dallas, TX",
+	"Revolution Doughnuts & Coffee, 908 W College Ave, Decatur, GA",
+	"Glazed Gourmet Doughnuts, 481 King St, Charleston, SC",
+	"Monuts Donuts, 110 E Parrish St, Durham, NC",
+	"Astro Doughnuts & Fried Chicken, 1308 G St NW, Washington, DC",
+	"Federal Donuts, 1632 Sansom St, Philadelphia, PA",
+	"Union Square Donuts, 16 Bow Street, Somerville, MA",
+	"The Holy Donut, 194 Park Ave, Portland, ME",
+	"Blue Star Donuts, 1237 SW Washington St, Portland, OR",
+	"Top Pot Doughnuts, 1235 Maple Street, Issaquah, WA"
+]
 
 var donuts = [
   ['King Pin Donuts', 37.867962,-122.257937],

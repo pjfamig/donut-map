@@ -17,18 +17,17 @@
         <!-- .nav, .navbar-search, .navbar-form, etc -->
 
 		  <nav>
+			<%= form_tag locations_path, :method => 'get', :class => "form-search" do %>
+				<div class="input-append">
+					<%= text_field_tag :search, params[:search], :autocomplete => :off, :class => "input-large search-query", :id => "appendedInputButton", placeholder: "Find by name, city, or address..." %>
+					<%= submit_tag "Go!", :name => nil, :class => "btn" %>
+				</div>
+			<% end %>
+
+			<script>
+			$('#appendedInputButton').typeahead({items: 8, source: donuts2});
+			</script>
 	        <ul class="nav pull-right">
-			  <li>
-			
-<%= form_tag locations_path, :method => 'get', :class => "form-search" do %>
-	<div class="input-append">
-		<%= text_field_tag :search, params[:search], :class => "input-large search-query", :id => "appendedInputButton" %>
-		<%= submit_tag "Go!", :name => nil, :class => "btn" %>
-	</div>
-<% end %>
-
-
-			  </li>
 			  <li><%= link_to 'See All', locations_path %></li>
 	          <li><%= link_to "About", about_path %></li>
 	        </ul>
