@@ -9,6 +9,8 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all
     end
+    
+    @autocomplete_items = Location.all
   end
 
   # GET /locations/1

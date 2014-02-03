@@ -12,6 +12,11 @@ body {
 }
 
 
+.ui-autocomplete {
+	cursor: pointer;
+	z-index: 9999 !important;
+}
+
 .navbar.navbar-fixed-top .navbar-inner{
     background: rgba(255, 255, 255, 0.9);
 }

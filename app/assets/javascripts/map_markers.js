@@ -152,6 +152,25 @@ function closeInfos(){
    }
 }
 
+var donuts3 = [
+	{
+		value: "King Pin Donuts", //this is what actually gets executed
+		label: "<strong>King Pin Donuts</strong><br> 2521 Durant Ave, Berkeley, CA", // this is what gets searched and displayed
+		desc: "2521 Durant Ave, Berkeley, CA" //this can be displayed but will not be searched
+	},
+	{
+		value: "Fluffy Donuts",
+		label: "<strong>Fluffy Donuts</strong><br>757 Russell Blvd, Davis, CA", 
+		desc: "757 Russell Blvd, Davis, CA"
+	},
+	{
+		value: "Golden Donut",
+		label: "<strong>Golden Donut</strong><br>5401 Geary Blvd, San Francisco, CA",
+		desc: "5401 Geary Blvd, San Francisco, CA"
+	}
+];
+
+
 var donuts2 = [
 	"King Pin Donuts, 2521 Durant Ave, Berkeley, CA",
 	"Fluffy Donuts, 757 Russell Blvd, Davis, CA",
