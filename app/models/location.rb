@@ -1,8 +1,8 @@
 class Location < ActiveRecord::Base
 
   def self.search(search)
-    if search
-      find(:all, :conditions => ['LOWER(name) LIKE LOWER(?)', "%#{search}%"])     
+    if search.present?
+      where("name @@ :q or address @@ :q", q: search)     
     else
       find(:all)
     end
