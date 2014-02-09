@@ -77,10 +77,10 @@ function handleNoGeolocation(errorFlag) {
 
 function setMarkers(map, allLocations, pos) {
 	var image = { 
-		url: 'images/donut_test_medium.png',
-		size: new google.maps.Size(48, 48),
-		origin: new google.maps.Point(0,0),
-		anchor: new google.maps.Point(0, 48)
+		url: 'images/donut_with_arrow.png',
+		size: new google.maps.Size(64, 88),
+		origin: new google.maps.Point(0, 0),
+		anchor: new google.maps.Point(32, 88)
 	};
 
 	//create an array to store name-and-distance objects for sidebar
