@@ -46,7 +46,6 @@ function initialize() {
 	
 }
 
-
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
     var content = 'Error: The Geolocation service failed.';
@@ -74,7 +73,6 @@ function handleNoGeolocation(errorFlag) {
   setMarkers(map, allLocations, pos);
 }
 
-
 function setMarkers(map, allLocations, pos) {
 	var image = { 
 		url: 'images/donut_with_arrow.png',
@@ -86,7 +84,7 @@ function setMarkers(map, allLocations, pos) {
 	//create an array to store name-and-distance objects for sidebar
 	var distances = [];
 
-	//loop through database and set up markers and metadata
+	//loop through all locations, set markers and info window
 	for (var i = 0; i < allLocations.length; i++) {
 	    var testResult = allLocations[i];
 	    var myLatLng = new google.maps.LatLng(testResult.latitude, testResult.longitude);	
@@ -107,7 +105,6 @@ function setMarkers(map, allLocations, pos) {
 		distances[i] = new Object();
 		distances[i].name = testResult.name;
 		distances[i].distance = distance;
-		
 		
 		var content = "<strong>" + testResult.name + "</strong>" + "<br>" + testResult.address + "<br>" + testResult.city + ", " + testResult.state + "<br><br>" + distance + " miles away!";
 		
@@ -132,7 +129,8 @@ function findNearest(distances) {
 	distances.sort(function(a, b) { 
 	  return a.distance - b.distance  ||  a.name.localeCompare(b.name);
 	});
-	console.log(distances);
+	console.log(distances); //print to console for now
+	//replace with sidebar output
 }
 
 
