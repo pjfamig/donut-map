@@ -18,7 +18,7 @@
 //= require map_base
 //= require map_markers
 //= require bootstrap
-
+//= require bootstrap-typeahead-rails
 
 
 

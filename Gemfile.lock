@@ -29,6 +29,8 @@ GEM
     atomic (1.1.14)
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
+    bootstrap-typeahead-rails (0.9.3.3)
+      railties (>= 3.0)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -151,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.1.1)
+  bootstrap-typeahead-rails
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)
   jbuilder (= 1.0.2)
